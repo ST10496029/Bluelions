@@ -1,5 +1,5 @@
 website for radebe precious's empowering the nation 
-created ny milani and kiju from the blue lions
+created by milani and kiju from the blue lions
 
 
 
