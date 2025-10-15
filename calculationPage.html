@@ -1,46 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!--imported-CssFile-->
-    <link rel="stylesheet" href="css-assets/style.css" />
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nurgle Pool Solutions</title>
+<head>
+  <meta charset="UTF-8">
+  <title>Course Booking</title>
+  <link rel="stylesheet" href="css-assets/calculationPage.css">
+  
   </head>
   <body>
-    <!--Top-navigation-menu-->    
-  <div class="navMenu">
-  <nav>
-    <ul class="leftNavMenu">
-      <li><a href="contactus.html">contact us</a></li>
-      <li class="dropDown">
-        <a href="courseSummary.html">Courses</a>
-      <ul class="dropDownMenu">
-      <li><a href="6weekCourses.html">six weeks</a></li>
-      <li><a href="6monthCourses.html">six months</a></li> 
-      </ul>
-      </li>
-    </ul>   
-    <div class="navMenuLogo">
-      <a href="index.html">
-      <img src="_images/gallery/thumbs/cartoon logo.png" class="logo" alt="Logo">
-      </a>
+    <!-- ================= NAVIGATION BAR ================= -->
+    <div class="navMenu" id="navMenu">
+      <nav>
+        <!-- Left Menu -->
+        <ul class="leftNavLinks">
+          <li><a href="contactus.html" class="navLink">Contact Us</a></li>
+          <li><a href="courseSummary.html" class="navLink">Courses</a></li>
+        </ul>
+
+        <!-- Logo -->
+        <div class="navMenuLogo">
+          <a href="index.html">
+            <img src="_images/gallery/thumbs/cartoon logo.png" alt="Logo" />
+          </a>
+        </div>
+
+        <!-- Hamburger for mobile -->
+        <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+
+        <!-- Right Menu -->
+        <ul class="rightNavLinks">
+          <li>
+            <form action="/search">
+              <input
+                type="text"
+                placeholder="Find a course"
+                class="navSearch"
+              />
+            </form>
+          </li>
+          <li><a href="calculationPage.html" class="navLink">Get Started</a></li>
+        </ul>
+      </nav>
     </div>
-    <ul class="rightNavMenu">
-      <li>
-    <form action="/search">
-      <input type="text" placeholder="find a course" />
-    </form>
-       </li>
-      <li><a href="calculationPage.html">Get Started</a></li>
-    </ul>
-  </nav>
-</div> 
-      <header>
-         <p></p>
-      <h1>Our projects</h1>
-      </header>
-      <p>     
-    </section>
-  </body>
+
+
+  <div class="container">
+   
+    <div class="left">
+      <h2>Book Your Courses</h2>
+
+      <!-- Error handeling message -->
+      <div id="error-message"></div>
+
+      <form id="bookingForm">
+
+        <!-- cHECKLIST for the courses -->
+        <h3>six month courses/h3>
+        <!--all of radedbes courses offered and there prices -->
+        <div class="checklist">
+          <label><input type="checkbox" value="First Aid" data-price="1500"> First Aid — R1500</label>
+          <label><input type="checkbox" value="Sewing" data-price="1500"> sewing — R1500</label>
+          <label><input type="checkbox" value="landscaping" data-price="1500"> landscaping — R1500</label>
+          <label><input type="checkbox" value="lifeskills" data-price="1000"> life skills — R1500</label>
+        </div>
+
+        <h3>six week courses Courses</h3>
+        <div class="checklist">
+          <label><input type="checkbox" value="child minding" data-price="750"> child minding — R750</label>
+          <label><input type="checkbox" value="cooking" data-price="850"> cooking — R750</label>
+          <label><input type="checkbox" value="garden maintenence" data-price="600"> Illustration — R750</label>
+        </div>
+        <h3>Contact Details</h3>
+        <input type="text" id="name" placeholder="name" required>
+        <input type="email" id="email" placeholder="Email" required>
+        <input type="tel" id="phone" placeholder="Phone" required>
+        <button type="button" id="bookBtn">Make a Booking</button>
+      </form>
+    </div>
+    <div class="right">
+      <h2>Booking Summary</h2>
+      <div id="output"></div>
+    </div>
+  </div>
+
+  <script src="js-assets/index.js"></script>
+</body>
 </html>

@@ -1,17 +1,108 @@
-/* =============== RESET =============== */
-* {
+/* ======= BASIC PAGE SETUP ======= */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
 }
 
-/* =============== BODY & BACKGROUND =============== */
-body {
-  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-              url("_images/gallery/full/3844-gaara.png") no-repeat center center;
-  min-height: 100vh;
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.left, .right {
+  flex: 1;
+  padding: 30px;
+  background: white;
+  overflow-y: auto;
+}
+
+.left {
+  background-color: #fafafa;
+}
+
+.right {
+  background-color: #fff;
+  border-left: 2px solid #eee;
+}
+
+/* ======= COURSE CHECKLIST ======= */
+.checklist label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* Rounded checkbox styling */
+.checklist input[type="checkbox"] {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #007bff;
+  border-radius: 4px;
+  margin-right: 10px;
+  cursor: pointer;
+  position: relative;
+}
+
+.checklist input[type="checkbox"]:checked {
+  background-color: #007bff;
+}
+
+/* ======= TOTAL PRICE SECTION ======= */
+.price-summary {
+  margin: 20px 0;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+}
+
+.price-summary p {
+  margin: 5px 0;
+  font-size: 15px;
+}
+
+/* ======= FORM STYLES ======= */
+form input, form button {
+  display: block;
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 10px;
+  font-size: 16px;
+}
+
+button {
+  background-color: #007bff;
   color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* ======= ERROR MESSAGE ======= */
+#error-message {
+  color: red;
+  background: #ffe6e6;
+  border: 1px solid #ff9999;
+  padding: 10px;
+  margin-bottom: 15px;
+  display: none;
+  border-radius: 5px;
+}
+
+/* ======= OUTPUT DISPLAY ======= */
+#output {
+  font-size: 16px;
+  line-height: 1.6;
 }
 
 /* =============== NAVIGATION BAR =============== */
@@ -135,36 +226,4 @@ body {
     width: 80%;
     margin: 10px auto;
   }
-}
-
-/* =============== HEADER & BUTTONS =============== */
-header {
-  height: 100vh;
-  padding-top: 180px;
-  text-align: center;
-}
-
-header h1 {
-  font-size: 60px;
-}
-
-.Text {
-  padding: 100px 20px;
-  text-align: center;
-}
-
-button {
-  margin: 10px;
-  padding: 10px 20px;
-  border-radius: 25px;
-  border: none;
-  cursor: pointer;
-  background: white;
-  color: black;
-  transition: 0.3s;
-}
-
-button:hover {
-  background: gray;
-  color: white;
 }

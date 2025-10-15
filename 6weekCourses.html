@@ -8,61 +8,60 @@
     <title>Nurgle Pool Solutions</title>
   </head>
   <body>
-    <!--Top-navigation-menu-->    
-  <div class="navMenu">
-  <nav>
-    <ul class="leftNavMenu">
-      <li><a href="contactus.html">contact us</a></li>
-      <li class="dropDown">
-        <a href="courseSummary.html">Courses</a>
-      <ul class="dropDownMenu">
-      <li><a href="6weekCourses.html">six weeks</a></li>
-      <li><a href="6monthCourses.html">six months</a></li> 
-      </ul>
-      </li>
-    </ul>   
-    <div class="navMenuLogo">
-      <a href="index.html">
-      <img src="_images/gallery/thumbs/cartoon logo.png" class="logo" alt="Logo">
-      </a>
+    
+    <!--Navigation menu that splits to right and left-->
+    <div class="navMenu" id="navMenu">
+      <nav>
+        <ul class="leftNavLinks">
+          <li><a href="contactus.html" class="navLink">Contact Us</a></li>
+          <li><a href="courseSummary.html" class="navLink">Courses</a></li>
+        </ul>
+
+    <!--Organisation logo in the middle that acts a a home button when clicked-->
+        <div class="navMenuLogo">
+          <a href="index.html"> <img src="_images/gallery/thumbs/cartoon logo.png" alt="Logo" /></a>
+        </div>
+
+    <!--Menu toggle for mobile phones (w3schools, 2025)-->
+        <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+   
+<ul class="rightNavLinks">
+          <li>
+            <form action="/search"> <!--Search bar to help people search for courses-->
+              <input
+                type="text"
+                placeholder="Find a course"
+                class="navSearch"
+              />
+            </form>
+          </li>
+          <li><a href="calculationPage.html" class="navLink">Get Started</a></li> <!--note this takes u to the calculation page-->
+        </ul>
+      </nav>
     </div>
-    <ul class="rightNavMenu">
-      <li>
-    <form action="/search">
-      <input type="text" placeholder="find a course" />
-    </form>
-       </li>
-      <li><a href="calculationPage.html">Get Started</a></li>
-    </ul>
-  </nav>
-</div> 
 
     <!---SITE HEADING-->
-
     <div class="heading">
     <header>
-      <h1 = class="heading">Six Week Courses</h1>
+      <h1 = class="heading">Six week Courses</h1>
       <p>Below are the six week courses</p>
+      <p>
+Empowering the Nation offers the following six-week courses.<br>
+<a href="childMinding.html"><button>childMinding</button></a> <br>
+<a href="cooking.html"><button>cooking</button></a><br>
+<a href="gardenMaintainence.html"><button>gardenMaintainence</button></a></p>
+<a href="index.html"><button> Back </button></a>
     </header>
     </div>
-    <!--bodytext-->
-    <div class="Text">
-    <p>Child minding</p>
-    <a href="subpages/6weekCourses/childMinding.html">
-    <button>Child minding</button>
-    </a>
-    </div>
-     <div class="Text">
-    <p>Cooking</p>
-    <a href="subpages/6weekCourses/cooking.html">
-    <button>Cooking</button>
-    </a>
-     </div>
-      <div class="Text">
-    <p>Garden maintanence</p>
-    <a href="subpages/6weekCourses/gardenMaintainence.html">
-    <button>Garden maintainence</button>
-    </a>
-      </div>
+    <!--javas for navigation menu-->
+    <script>
+      const nav = document.querySelector(".navMenu"); const toggle = document.getElementById("menu-toggle");
+      const leftLinks = document.querySelector(".leftNavLinks"); const rightLinks = document.querySelector(".rightNavLinks");
+      // for the small screens nav menu when togled 
+      toggle.addEventListener("click", () => { //event listener(w3schools, 2025)
+        leftLinks.classList.toggle("active");
+        rightLinks.classList.toggle("active");
+      });
+    </script>
   </body>
 </html>

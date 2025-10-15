@@ -1,0 +1,290 @@
+/* 
+   Reset some default browser styles.
+   Removes margin/padding, sets a clean font, 
+   and makes sizing consistent across all elements.
+*/
+* {
+   margin: 0;
+   padding: 0;
+   font-family: Arial, Helvetica, sans-serif;
+   box-sizing: border-box;
+}
+
+/* 
+   Main navigation bar container.
+   Using flexbox to arrange: left menu | logo | right menu.
+*/
+.navMenu nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;                   /* arrange children in a row */
+  justify-content: space-between;  /* push left to start, right to end */
+  align-items: center;             /* align everything vertically center */
+  background: #fff;                /* white background */
+  padding: 10px 20px;              /* space inside the nav */
+  width: 100%;                     /* make it stretch full screen width */
+  height: auto;              /* height adapts to content */
+  z-index: 1000;
+}
+
+/* 
+   Both left and right menus share the same styling.
+   They will display their <li> items side by side.
+*/
+.leftNavMenu,
+.rightNavMenu {
+  display: flex;        /* flex row for menu items */
+  list-style: none;     /* remove default bullet points */
+  gap: 20px;            /* spacing between menu items */
+}
+
+/* Each individual item inside left and right menus */
+.leftNavMenu li,
+.rightNavMenu li {
+  display: inline; /* keeps them in a row (redundant with flex, but fine) */
+}
+
+/* 
+   Styling for the links inside the menus.
+   Padding makes them look clickable.
+*/
+.leftNavMenu a,
+.rightNavMenu a {
+    flex-shrink: 0;
+align-items: center;
+  text-decoration: none;        /* remove underline */
+  color: black;                 /* text color */
+  font-weight: 500;         /* slightly bold */
+  padding: 1rem 2.5rem;         /* breathing space around text */
+  border-radius: 33px;  
+  border: 1px solid black;         /* smooth rounded corners */
+  background: white;
+  transition: all 0.5s;
+}
+
+/* When you hover over a menu link, it gets a light background */
+.leftNavMenu a:hover, 
+.rightNavMenu a:hover {
+  background: black;
+}
+
+/* 
+   Logo container.
+   Flex set to "auto" so it doesn’t stretch.
+*/
+.navMenuLogo {
+  flex: 0 10 auto ;
+}
+
+/* Actual logo image styling */
+.navMenuLogo img {
+  width: 280px;          /* control logo size */
+  height: 130px;         /* consistent height */
+  
+}
+
+/* 
+   General page body styling.
+   Background is black, text is white by default.
+*/
+body {
+
+  background: black;
+  color: white;
+}
+
+/* 
+   Header section takes up full screen height (100vh = 100% of viewport height).
+   Used for hero/banner type sections.
+*/
+header {
+    padding: 170px;
+    width: 100%;
+    height: 100vh;
+    font-size: 30px;
+}
+
+/* Big heading text inside the header */
+header h1 {
+    font-size: 60px;
+    margin-top: 10px;
+}
+
+/* 
+   A generic container with vertical stacking.
+   Could be used for content sections.
+*/
+.container-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+/* 
+   Container for images displayed in a row,
+   aligned to the right side.
+*/
+.image-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+/* 
+   General image styles for all images except the logo.
+   Logo has its own .nav-logo img styling.
+*/
+
+
+img {
+    width: 60%;
+    height: 20px;
+}
+
+
+/* Parent <li> that holds the dropdown */
+.dropDown {
+  position: relative; /* allows absolute positioning of submenu */
+}
+
+/* The submenu (hidden by default) */
+.dropDownMenu {
+  display: none;           /* start hidden */
+  position: absolute;      /* position relative to parent */
+  top: 100%;               /* put it just below the parent link */
+  left: 0;                 /* align with left side */
+  background: black;       /* dropdown background */
+  min-width: 180px;        /* size of dropdown box */
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* slight shadow */
+  border-radius: 5px;
+  z-index: 999;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Style links inside dropdown */
+.dropDownMenu li a {
+  display: block;             /* make them fill the dropdown width */
+  padding: 10px 15px;
+  color: black;
+  text-decoration: none;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Remove border for the last item */
+.dropDownMenu li:last-child a {
+  border-bottom: none;
+}
+
+/* Hover effect for dropdown links */
+.dropDownMenu li a:hover {
+  background: #f2f2f2;
+}
+
+/* Show dropdown when hovering over parent */
+.dropDown:hover .dropDownMenu {
+  display: block;
+}
+
+.Text {
+   padding: 170px;
+    width: 100%;
+    height: 100vh;
+    font-size: 30px;
+}
+
+/*
+
+
+Card Boxes 
+
+
+*/
+
+/* cardBoxSection*/
+
+.cardBoxSection {
+  padding: 40px 20px;
+  text-align: center;
+
+}
+
+.cardBoxSection h1 {
+  margin-bottom: 30px;
+  font-size: 2em;
+  color: black;
+}
+
+/* cardBoxContainer*/
+
+.cardBoxContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* cardBox*/
+
+.cardBox {
+  background-color: aqua;
+border-radius: 10px;
+overflow: hidden;
+box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+display:flex;
+flex-direction: column;
+justify-content: space-between;
+}
+
+.cardBox img {
+  width: 100%;
+  height:180px;
+  object-fit: cover;
+}
+
+.cardBox h3 {
+  margin: 15px;
+  font-size: 1.2em;
+  color: black;
+}
+
+.cardBox p {
+  margin: 15px;
+  color: black;
+  font-size: 1.2em;
+}
+
+/* Buttons */
+
+.btn {
+  display: inline-block;
+  background-color: blue;
+  color: white;
+  text-decoration: none;
+  padding: 10px 16px;
+  border-radius: 5px;
+  margin: 10px auto 20px;
+  transition: background-color 0.3s ease;
+  width: fit-content;
+}
+
+.btn :hover {
+  background-color: #fff;
+}
+
+.cardBox:hover {
+  transform: translate(-6px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Responsive Text */
+@media (max-width:600px) {
+  .cardBoxSection h1 {
+    font-size: 1.5em;
+  }
+  
+}

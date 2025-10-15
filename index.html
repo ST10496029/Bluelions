@@ -1,57 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!--imported-CssFile-->
     <link rel="stylesheet" href="css-assets/style.css" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nurgle Pool Solutions</title>
+
   </head>
   <body>
-    <!--Top-navigation-menu-->    
-  <div class="navMenu">
-  <nav>
-    <ul class="leftNavMenu">
-      <li><a href="contactus.html">contact us</a></li>
-      <li class="dropDown">
-        <a href="courseSummary.html">Courses</a>
-      <ul class="dropDownMenu">
-      <li><a href="6weekCourses.html">six weeks</a></li>
-      <li><a href="6monthCourses.html">six months</a></li> 
-      </ul>
-      </li>
-    </ul>   
-    <div class="navMenuLogo">
-      <a href="index.html">
-      <img src="_images/gallery/thumbs/cartoon logo.png" class="logo" alt="Logo">
-      </a>
+
+    <!--Navigation menu that splits to right and left-->
+    <div class="navMenu" id="navMenu">
+      <nav>
+        <ul class="leftNavLinks">
+          <li><a href="contactus.html" class="navLink">Contact Us</a></li>
+          <li><a href="courseSummary.html" class="navLink">Courses</a></li>
+        </ul>
+
+    <!--Organisation logo in the middle that acts a a home button when clicked-->
+        <div class="navMenuLogo">
+          <a href="index.html"> <img src="_images/gallery/thumbs/cartoon logo.png" alt="Logo" /></a>
+        </div>
+
+    <!--Menu toggle for mobile phones (w3schools, 2025)-->
+        <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+   
+<ul class="rightNavLinks">
+          <li>
+            <form action="/search"> <!--Search bar to help people search for courses-->
+              <input
+                type="text"
+                placeholder="Find a course"
+                class="navSearch"
+              />
+            </form>
+          </li>
+          <li><a href="calculationPage.html" class="navLink">Get Started</a></li> <!--note this takes u to the calculation page-->
+        </ul>
+      </nav>
     </div>
-    <ul class="rightNavMenu">
-      <li>
-    <form action="/search">
-      <input type="text" placeholder="find a course" />
-    </form>
-       </li>
-      <li><a href="calculationPage.html">Get Started</a></li>
-    </ul>
-  </nav>
-</div> 
-    <!--Page-Heading-->
-    <div class="heading">
+
+    <!--Heading and organisation description-->
     <header>
       <p>Precious Radebe's</p>
-      <h1 = class="heading">EMPOWERING THE NATION</h1>
-    </header>
-    </div>
-    <!--bodytext-->
+      <h1>EMPOWERING THE NATION</h1>
+      <p>Precious Radebe's The SME is started by Precious Radebe. It gives skills training to domestic workers and gardeners. Precious started it because her parents<br>and older family members did not get the chance to learn new skills or study further.<br>The training helps people learn more so they can get better jobs or earn more money<br>. It also helps them start their own small business.<br>Employers can also send their workers to get training so they can do more work at home.<br>Customers can choose one or more courses, and if they take more courses, they get a discount.</p>
+     
+      <!--Summary of courses offered and buttons that lead to them-->
     <div class="Text">
-    <p>Course description</p>
-    <a href="6weekCourses.html">
-    <button>six week courses</button>
-    </a>
-  <a href="6monthCourses.html">
-    <button>six month courses</button>
-    </a>
+      <a href="6weekCourses.html"><button>Six Week Courses</button></a>
+      <a href="6monthCourses.html"><button>Six Month Courses</button></a>
     </div>
+    </header>
+
+    <!--javas for navigation menu-->
+    <script>
+      const nav = document.querySelector(".navMenu"); const toggle = document.getElementById("menu-toggle");
+      const leftLinks = document.querySelector(".leftNavLinks"); const rightLinks = document.querySelector(".rightNavLinks");
+      // for the small screens nav menu when togled 
+      toggle.addEventListener("click", () => { //event listener(w3schools, 2025)
+        leftLinks.classList.toggle("active");
+        rightLinks.classList.toggle("active");
+      });
+    </script>
   </body>
 </html>
